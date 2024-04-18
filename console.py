@@ -2,6 +2,8 @@
 """ Console Module """
 import cmd
 import sys
+import shlex
+
 from models.base_model import BaseModel
 from models.__init__ import storage
 from models.user import User
@@ -74,7 +76,7 @@ class HBNBCommand(cmd.Cmd):
                 if pline:
                     # check for *args or **kwargs
                     if pline[0] is '{' and pline[-1] is'}'\
-                            and type(eval(pline)) is dict:
+                        and type(eval(pline)) is dict:
                         _args = pline
                     else:
                         _args = pline.replace(',', '')
@@ -113,18 +115,33 @@ class HBNBCommand(cmd.Cmd):
         """ Overrides the emptyline method of CMD """
         pass
 
-    def do_create(self, args):
+    def do_create(self, arg):
         """ Create an object of any class"""
-        if not args:
+        try:
+            if not arg:
+                raise SyntaxError() 
+            my_list = arg.split()
+            obj = eval("{}()".format(my_list[0]))
+            for index, iter in enumerate(my_list):
+                if index > 0:
+                    param = iter.split("=")
+                    key = param[0]
+                    value = param[1]
+                    if value.isdigit():
+                        setattr(obj, key, int(value))
+                    elif value.replace('.', '', 1).isdigit():
+                        setattr(obj, key, float(value))
+                    else:
+                        value = value.replace('_', ' ')
+                        new_value = value.replace('"', '')
+                        setattr(obj, key, new_value)
+            obj.save()
+            print("{}".format(obj.id))
+                
+        except SyntaxError:
             print("** class name missing **")
-            return
-        elif args not in HBNBCommand.classes:
+        except NameError:
             print("** class doesn't exist **")
-            return
-        new_instance = HBNBCommand.classes[args]()
-        storage.save()
-        print(new_instance.id)
-        storage.save()
 
     def help_create(self):
         """ Help information for the create method """
