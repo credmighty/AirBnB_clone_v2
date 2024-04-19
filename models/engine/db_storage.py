@@ -21,9 +21,11 @@ HBNB_ENV = getenv('HBNB_ENV')
 
 
 class DBStorage:
-    """"""
+    """QLAlchemy will be your best friend!
+        It’s time to change your storage engine and use SQLAlchemy
+    """
     __engine = None
-	__session = None
+    __session = None
 
     def __init__(self):
         """"""
