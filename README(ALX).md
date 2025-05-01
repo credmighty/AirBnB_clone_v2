@@ -1,21 +1,27 @@
 0x02. AirBnB clone - MySQL
-Group project
-Python
-OOP
-Back-end
-SQL
-MySQL
-ORM
-SQLAlchemy
+==========================
+Group project Python OOP Back-end SQL MySQL ORM SQLAlchemy
+```
  Weight: 2
+```
+```
  Project to be done in teams of 2 people (your team: Abdullah Abdulrofiu, Emmanuel Nnaji)
+ ```
+```
  Project over - took place from Apr 12, 2024 6:00 AM to Apr 18, 2024 6:00 AM
+```
+```
  An auto review will be launched at the deadline
+```
+```
 In a nutshell…
-Auto QA review: 49.2/191 mandatory
-Altogether:  25.76%
-Mandatory: 25.76%
-Optional: no optional tasks
+- Auto QA review: 49.2/191 mandatory
+- Altogether:  25.76%
+  - Mandatory: 25.76%
+  - Optional: no optional tasks
+```
+
+```
 Background Context
 Environment variables will be your best friend for this project!
 
@@ -25,18 +31,21 @@ HBNB_MYSQL_PWD: the password of your MySQL
 HBNB_MYSQL_HOST: the hostname of your MySQL
 HBNB_MYSQL_DB: the database name of your MySQL
 HBNB_TYPE_STORAGE: the type of storage used. It can be “file” (using FileStorage) or db (using DBStorage)
+
 Resources
+---------
 Read or watch:
 
-cmd module
-packages concept page
-unittest module
-args/kwargs
-SQLAlchemy tutorial
-How To Create a New User and Grant Permissions in MySQL
-Python3 and environment variables
-SQLAlchemy
-MySQL 8.0 SQL Statement Syntax
+- [cmd module](https://docs.python.org/3/library/cmd.html)
+- packages concept page
+- [unittest module](https://docs.python.org/3/library/unittest.html#module-unittest
+- [args/kwargs](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/)
+- [SQLAlchemy tutorial](https://docs.sqlalchemy.org/en/13/orm/tutorial.html)
+- [How To Create a New User and Grant Permissions in MySQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
+- [Python3 and environment variables](https://docs.python.org/3/library/os.html?highlight=env#os.getenv)
+- [SQLAlchemy](https://docs.sqlalchemy.org/en/13/)
+- [MySQL 8.0 SQL Statement Syntax](https://dev.mysql.com/doc/refman/8.0/en/sql-statements.html)
+
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
@@ -98,6 +107,9 @@ GitHub
 There should be one project repository per group. If you clone/fork/whatever a partner’s project repository with the same name before the second deadline, you risk a 0% score.
 
 More Info
+=========
+
+![server-side|client-side](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step2.png)
 
 
 Comments for your SQL file:
@@ -106,11 +118,17 @@ $ cat my_script.sql
 -- because Batch 3 is the best!
 SELECT id, name FROM students WHERE batch_id = 3 ORDER BY created_at DESC LIMIT 3;
 $
+```
+
+```
 Video library(2 total)
 Search by title
 HBNB - storage abstraction
 AirBnB console
+
+```
 Tasks
+```python3
 0. Fork me if you can!
 mandatory
 Score: 100.0% (Checks completed: 100.0%)
@@ -125,7 +143,7 @@ In the industry, you will work on an existing codebase 90% of the time. Your fir
 “… I will refactor everything…”
 But the worst thing you could possibly do is to redo everything. Please don’t do that! Note: the existing codebase might be perfect, or it might have errors. Don’t always trust the existing codebase!
 
-For this project you will fork this codebase:
+For this project you will fork this [codebase](https://github.com/justinmajetich/AirBnB_clone):
 
 update the repository name to AirBnB_clone_v2
 update the README.md with your information but don’t delete the initial authors
@@ -134,23 +152,26 @@ If you are the owner of this repository, please create a new repository named Ai
 Repo:
 
 GitHub repository: AirBnB_clone_v2
-  
+```
+
+```  
 1. Bug free!
 mandatory
 Score: 9.17% (Checks completed: 11.11%)
 Do you remember the unittest module?
 
 This codebase contains many test cases. Some are missing, but the ones included cover the basic functionality of the program.
-
+```
 guillaume@ubuntu:~/AirBnB_v2$ python3 -m unittest discover tests 2>&1 /dev/null | tail -n 1
 OK
 guillaume@ubuntu:~/AirBnB_v2$ 
+```
 All your unittests must pass without any errors at anytime in this project, with each storage engine!. Same for PEP8!
 
 guillaume@ubuntu:~/AirBnB_v2$ HBNB_ENV=test HBNB_MYSQL_USER=hbnb_test HBNB_MYSQL_PWD=hbnb_test_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db python3 -m unittest discover tests 2>&1 /dev/null | tail -n 1
 OK
 guillaume@ubuntu:~/AirBnB_v2$ 
-Some tests won’t be relevant for some type of storage, please skip them by using the skipIf feature of the Unittest module - 26.3.6. Skipping tests and expected failures. Of course, the number of tests must be higher than the current number of tests, so if you decide to skip a test, you should write a new test!
+Some tests won’t be relevant for some type of storage, please skip them by using the skipIf feature of [the Unittest module - 26.3.6. Skipping tests and expected failures](https://docs.python.org/3/library/unittest.html#skipping-tests-and-expected-failures). Of course, the number of tests must be higher than the current number of tests, so if you decide to skip a test, you should write a new test!
 
 How to test with MySQL?
 First, you create a specific database for it (next tasks). After, you have to remember what the purpose of an unittest?
@@ -166,7 +187,9 @@ if the difference is +1 => test passed
 Repo:
 
 GitHub repository: AirBnB_clone_v2
-  
+```
+
+```
 2. Console improvements
 mandatory
 Score: 18.18% (Checks completed: 18.18%)
@@ -204,7 +227,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: console.py, models/, tests/
+```
    
+```
 3. MySQL setup development
 mandatory
 Score: 65.0% (Checks completed: 100.0%)
@@ -232,7 +257,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: setup_mysql_dev.sql
-  
+```
+
+```
 4. MySQL setup test
 mandatory
 Score: 65.0% (Checks completed: 100.0%)
@@ -260,7 +287,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: setup_mysql_test.sql
+```
   
+```
 5. Delete object
 mandatory
 Score: 0.0% (Checks completed: 0.0%)
@@ -334,7 +363,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: models/engine/file_storage.py
-   
+```
+
+```
 6. DBStorage - States and Cities
 mandatory
 Score: 12.19% (Checks completed: 18.75%)
@@ -487,7 +518,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: models/base_model.py, models/city.py, models/state.py, models/engine/db_storage.py, models/__init__.py
+```
   
+```
 7. DBStorage - User
 mandatory
 Score: 0.0% (Checks completed: 0.0%)
@@ -532,7 +565,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: models/user.py
+```
   
+```
 8. DBStorage - Place
 mandatory
 Score: 4.06% (Checks completed: 6.25%)
@@ -615,7 +650,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: models/place.py, models/user.py, models/city.py
+```
   
+```
 9. DBStorage - Review
 mandatory
 Score: 0.0% (Checks completed: 0.0%)
@@ -671,7 +708,9 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: models/review.py, models/user.py, models/place.py
+```
   
+```
 10. DBStorage - Amenity... and BOOM!
 mandatory
 Score: 0.0% (Checks completed: 0.0%)
@@ -829,3 +868,4 @@ Repo:
 
 GitHub repository: AirBnB_clone_v2
 File: models/amenity.py, models/place.py
+```
